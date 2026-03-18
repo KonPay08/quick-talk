@@ -1,0 +1,72 @@
+[
+  {
+    "id": "phrase-001",
+    "sceneId": "scene-airport",
+    "targetText": "Where is the check-in counter?",
+    "targetLang": "en",
+    "nativeText": "チェックインカウンターはどこですか？",
+    "nativeLang": "ja",
+    "note": "空港に着いたらまず使うフレーズ",
+    "audioPath": "/audio/en/airport/phrase-001.mp3"
+  },
+  {
+    "id": "phrase-002",
+    "sceneId": "scene-airport",
+    "targetText": "I'd like a window seat, please.",
+    "targetLang": "en",
+    "nativeText": "窓側の席をお願いします。",
+    "nativeLang": "ja",
+    "note": "",
+    "audioPath": "/audio/en/airport/phrase-002.mp3"
+  },
+  {
+    "id": "phrase-003",
+    "sceneId": "scene-airport",
+    "targetText": "Where is the boarding gate?",
+    "targetLang": "en",
+    "nativeText": "搭乗ゲートはどこですか？",
+    "nativeLang": "ja",
+    "note": "",
+    "audioPath": "/audio/en/airport/phrase-003.mp3"
+  },
+  {
+    "id": "phrase-004",
+    "sceneId": "scene-hotel",
+    "targetText": "I have a reservation under the name...",
+    "targetLang": "en",
+    "nativeText": "...の名前で予約しています。",
+    "nativeLang": "ja",
+    "note": "チェックイン時に使う",
+    "audioPath": "/audio/en/hotel/phrase-004.mp3"
+  },
+  {
+    "id": "phrase-005",
+    "sceneId": "scene-hotel",
+    "targetText": "What time is checkout?",
+    "targetLang": "en",
+    "nativeText": "チェックアウトは何時ですか？",
+    "nativeLang": "ja",
+    "note": "",
+    "audioPath": "/audio/en/hotel/phrase-005.mp3"
+  },
+  {
+    "id": "phrase-006",
+    "sceneId": "scene-restaurant",
+    "targetText": "A table for two, please.",
+    "targetLang": "en",
+    "nativeText": "2名でお願いします。",
+    "nativeLang": "ja",
+    "note": "",
+    "audioPath": "/audio/en/restaurant/phrase-006.mp3"
+  },
+  {
+    "id": "phrase-007",
+    "sceneId": "scene-restaurant",
+    "targetText": "Could I see the menu, please?",
+    "targetLang": "en",
+    "nativeText": "メニューを見せていただけますか？",
+    "nativeLang": "ja",
+    "note": "",
+    "audioPath": "/audio/en/restaurant/phrase-007.mp3"
+  }
+]
