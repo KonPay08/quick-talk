@@ -132,7 +132,7 @@ export function PhraseList({ initialPhrases }: { initialPhrases: SavedPhrase[] }
                         className="icon-btn shrink-0 w-10 h-10"
                         style={{
                           background: playingId === phrase.id ? "var(--color-primary)" : "var(--color-border-light)",
-                          color: playingId === phrase.id ? "white" : "var(--color-primary)",
+                          color: playingId === phrase.id ? "white" : "var(--color-accent)",
                         }}
                         aria-label="音声を再生"
                       >

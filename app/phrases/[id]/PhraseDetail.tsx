@@ -145,7 +145,7 @@ export function PhraseDetail({ phrase }: { phrase: SavedPhrase }) {
             className="icon-btn shrink-0 w-11 h-11"
             style={{
               background: isPlaying ? "var(--color-primary)" : "var(--color-border-light)",
-              color: isPlaying ? "white" : "var(--color-primary)",
+              color: isPlaying ? "white" : "var(--color-accent)",
             }}
             aria-label="音声を再生"
           >
@@ -164,7 +164,7 @@ export function PhraseDetail({ phrase }: { phrase: SavedPhrase }) {
           className="icon-btn shrink-0 w-11 h-11"
           style={{
             background: copied ? "var(--color-primary)" : "var(--color-border-light)",
-            color: copied ? "white" : "var(--color-primary)",
+            color: copied ? "white" : "var(--color-accent)",
             transition: "background 0.2s, color 0.2s",
           }}
           aria-label="テキストをコピー"
