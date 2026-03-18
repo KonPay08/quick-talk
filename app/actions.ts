@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidateTag } from "next/cache";
 import {
   getAllPhrases,
   getPhraseById,
@@ -19,10 +19,10 @@ export async function fetchPhrase(id: string): Promise<SavedPhrase | null> {
 
 export async function savePhrase(phrase: SavedPhrase): Promise<void> {
   await insertPhrase(phrase);
-  revalidatePath("/");
+  revalidateTag("phrases");
 }
 
 export async function removePhrase(id: string): Promise<void> {
   await deletePhraseById(id);
-  revalidatePath("/");
+  revalidateTag("phrases");
 }

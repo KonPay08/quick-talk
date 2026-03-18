@@ -1,8 +1,6 @@
 import { getAllPhrases } from "@/lib/db";
 import { PhraseList } from "./PhraseList";
 
-export const dynamic = "force-dynamic";
-
 export default async function HomePage() {
   const phrases = await getAllPhrases();
   return <PhraseList initialPhrases={phrases} />;

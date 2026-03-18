@@ -1,4 +1,5 @@
 import { neon } from "@neondatabase/serverless";
+import { unstable_cache } from "next/cache";
 import { SavedPhrase } from "./types";
 
 function getSQL() {
@@ -29,24 +30,30 @@ function rowToPhrase(row: PhraseRow): SavedPhrase {
   };
 }
 
-export async function getAllPhrases(): Promise<SavedPhrase[]> {
-  const sql = getSQL();
-  const rows = (await sql`
-    SELECT * FROM phrases ORDER BY created_at DESC
-  `) as PhraseRow[];
-  return rows.map(rowToPhrase);
-}
+export const getAllPhrases = unstable_cache(
+  async (): Promise<SavedPhrase[]> => {
+    const sql = getSQL();
+    const rows = (await sql`
+      SELECT * FROM phrases ORDER BY created_at DESC
+    `) as PhraseRow[];
+    return rows.map(rowToPhrase);
+  },
+  ["all-phrases"],
+  { tags: ["phrases"] }
+);
 
-export async function getPhraseById(
-  id: string
-): Promise<SavedPhrase | null> {
-  const sql = getSQL();
-  const rows = (await sql`
-    SELECT * FROM phrases WHERE id = ${id}
-  `) as PhraseRow[];
-  if (rows.length === 0) return null;
-  return rowToPhrase(rows[0]);
-}
+export const getPhraseById = unstable_cache(
+  async (id: string): Promise<SavedPhrase | null> => {
+    const sql = getSQL();
+    const rows = (await sql`
+      SELECT * FROM phrases WHERE id = ${id}
+    `) as PhraseRow[];
+    if (rows.length === 0) return null;
+    return rowToPhrase(rows[0]);
+  },
+  ["phrase-by-id"],
+  { tags: ["phrases"] }
+);
 
 export async function insertPhrase(phrase: SavedPhrase): Promise<void> {
   const sql = getSQL();
