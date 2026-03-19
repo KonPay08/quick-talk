@@ -11,10 +11,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#042b48" },
-    { media: "(prefers-color-scheme: dark)", color: "#1a7fb5" },
-  ],
 };
 
 export default function RootLayout({
@@ -25,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <meta name="theme-color" content="#042b48" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1a7fb5" media="(prefers-color-scheme: dark)" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -32,7 +30,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="h-screen flex flex-col overflow-hidden" style={{ background: "var(--color-bg)" }}>
+      <body className="h-dvh flex flex-col overflow-hidden" style={{ background: "var(--color-bg)" }}>
         {/* Header */}
         <header
           className="shrink-0"
