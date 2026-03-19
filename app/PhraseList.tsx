@@ -121,7 +121,7 @@ export function PhraseList({ initialPhrases }: { initialPhrases: SavedPhrase[] }
       ) : (
         <>
           {/* Phrase List */}
-          <div className="flex-1">
+          <div className="flex-1 min-h-0 overflow-y-auto">
             <ul className="space-y-3">
               {currentPhrases.map((phrase) => (
                 <li key={phrase.id} className="card p-4">
@@ -168,7 +168,7 @@ export function PhraseList({ initialPhrases }: { initialPhrases: SavedPhrase[] }
 
           {/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex items-center justify-center gap-4 py-4">
+            <div className="shrink-0 flex items-center justify-center gap-4 py-4">
               <button
                 onClick={() => setCurrentPage((p) => p - 1)}
                 disabled={currentPage === 0}
