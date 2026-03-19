@@ -111,7 +111,7 @@ export function PhraseList({ initialPhrases }: { initialPhrases: SavedPhrase[] }
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-120px)]">
+    <div className="flex flex-col h-full">
       {phrases.length === 0 ? (
         <div className="flex-1 flex items-center justify-center">
           <p style={{ color: "var(--color-text-muted)" }}>
@@ -210,7 +210,7 @@ export function PhraseList({ initialPhrases }: { initialPhrases: SavedPhrase[] }
         style={{
           background: "var(--color-primary)",
           color: "white",
-          boxShadow: "0 4px 12px rgba(4, 43, 72, 0.4)",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
         }}
         aria-label="翻訳して追加"
       >

@@ -231,7 +231,7 @@ export default function TranslatePage() {
         <Link
           href="/"
           className="inline-flex items-center gap-1 text-sm transition-colors hover:opacity-70"
-          style={{ color: "var(--color-primary)" }}
+          style={{ color: "var(--color-accent)" }}
         >
           <ChevronLeftIcon className="w-4 h-4" />
           戻る

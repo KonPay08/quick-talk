@@ -21,7 +21,7 @@ export default async function PhrasePage({ params }: PageProps) {
         <Link
           href="/"
           className="inline-flex items-center gap-1 text-sm transition-colors hover:opacity-70"
-          style={{ color: "var(--color-primary)" }}
+          style={{ color: "var(--color-accent)" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

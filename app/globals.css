@@ -47,12 +47,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Primary - Brighter for dark mode visibility */
+    --color-primary: #1a7fb5;
+    --color-primary-light: #2590c5;
+    --color-primary-dark: #15699a;
+
     /* Neutral - Dark Mode */
     --color-bg: #0f172a;
     --color-bg-card: #1e293b;
     --color-bg-elevated: #334155;
     --color-border: #334155;
-    --color-border-light: #1e293b;
+    --color-border-light: #283a50;
 
     /* Text - Dark Mode */
     --color-text: #f1f5f9;

@@ -28,10 +28,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen" style={{ background: "var(--color-bg)" }}>
+      <body className="h-screen flex flex-col overflow-hidden" style={{ background: "var(--color-bg)" }}>
         {/* Header */}
         <header
-          className="sticky top-0 z-50"
+          className="shrink-0"
           style={{
             background: "var(--color-primary)",
           }}
@@ -48,7 +48,7 @@ export default function RootLayout({
             </h1>
           </div>
         </header>
-        <main className="max-w-lg mx-auto px-5 py-6">
+        <main className="flex-1 overflow-hidden max-w-lg mx-auto px-5 py-6 w-full">
           {children}
         </main>
       </body>
