@@ -76,6 +76,7 @@ export default function TranslatePage() {
   const [error, setError] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -197,8 +198,9 @@ export default function TranslatePage() {
   };
 
   const saveResult = async () => {
-    if (!result) return;
+    if (!result || isSaving || saved) return;
 
+    setIsSaving(true);
     const phrase: SavedPhrase = {
       id: crypto.randomUUID(),
       nativeText: result.sourceText,
@@ -211,9 +213,11 @@ export default function TranslatePage() {
 
     await savePhrase(phrase);
     setSaved(true);
+    setIsSaving(false);
   };
 
   const handleSaveAndBack = async () => {
+    if (isSaving || saved) return;
     await saveResult();
     router.push("/");
   };
@@ -285,13 +289,14 @@ export default function TranslatePage() {
               <>
                 <button
                   onClick={handleSaveAndBack}
+                  disabled={isSaving}
                   className="btn flex-1 py-2.5 text-sm"
                   style={{
                     background: "var(--color-primary)",
                     color: "white",
                   }}
                 >
-                  保存してホームへ
+                  {isSaving ? "保存中..." : "保存してホームへ"}
                 </button>
                 <button
                   onClick={resetResult}
