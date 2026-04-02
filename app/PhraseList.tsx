@@ -3,79 +3,14 @@
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { SavedPhrase } from "@/lib/types";
+import {
+  PlusIcon,
+  SpeakerIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@/app/icons";
 
 const ITEMS_PER_PAGE = 5;
-
-function PlusIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M5 12h14" />
-      <path d="M12 5v14" />
-    </svg>
-  );
-}
-
-function SpeakerIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-      <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-      <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-    </svg>
-  );
-}
-
-function ChevronLeftIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M15 18l-6-6 6-6" />
-    </svg>
-  );
-}
-
-function ChevronRightIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M9 18l6-6-6-6" />
-    </svg>
-  );
-}
 
 export function PhraseList({ initialPhrases }: { initialPhrases: SavedPhrase[] }) {
   const [currentPage, setCurrentPage] = useState(0);
