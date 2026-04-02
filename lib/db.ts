@@ -1,5 +1,4 @@
 import { neon } from "@neondatabase/serverless";
-import { cacheTag } from "next/cache";
 import { SavedPhrase } from "./types";
 
 function getSQL() {
@@ -31,8 +30,6 @@ function rowToPhrase(row: PhraseRow): SavedPhrase {
 }
 
 export async function getAllPhrases(): Promise<SavedPhrase[]> {
-  "use cache";
-  cacheTag("phrases");
   const sql = getSQL();
   const rows = (await sql`
     SELECT * FROM phrases ORDER BY created_at DESC
@@ -41,8 +38,6 @@ export async function getAllPhrases(): Promise<SavedPhrase[]> {
 }
 
 export async function getPhraseById(id: string): Promise<SavedPhrase | null> {
-  "use cache";
-  cacheTag("phrases");
   const sql = getSQL();
   const rows = (await sql`
     SELECT * FROM phrases WHERE id = ${id}

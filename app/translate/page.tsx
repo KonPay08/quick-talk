@@ -220,6 +220,7 @@ export default function TranslatePage() {
     if (isSaving || saved) return;
     await saveResult();
     router.push("/");
+    router.refresh();
   };
 
   const resetResult = () => {
