@@ -6,6 +6,7 @@ import {
   insertPhrase,
   deletePhraseById,
 } from "@/lib/db";
+import { revalidateTag } from "next/cache";
 import { SavedPhrase } from "@/lib/types";
 
 export async function fetchPhrases(): Promise<SavedPhrase[]> {
@@ -18,8 +19,10 @@ export async function fetchPhrase(id: string): Promise<SavedPhrase | null> {
 
 export async function savePhrase(phrase: SavedPhrase): Promise<void> {
   await insertPhrase(phrase);
+  revalidateTag("phrases", "max");
 }
 
 export async function removePhrase(id: string): Promise<void> {
   await deletePhraseById(id);
+  revalidateTag("phrases", "max");
 }
